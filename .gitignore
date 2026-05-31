@@ -1,0 +1,41 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dépendances
+node_modules/
+vendor/
+
+# Fichiers de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
+
+# Fichiers de build / distribution
+dist/
+build/
+out/
+*.min.js
+
+# Fichiers de cache
+.cache/
+*.cache
+.eslintcache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
