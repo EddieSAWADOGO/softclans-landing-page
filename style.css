@@ -65,7 +65,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-logo img {
     height: 48px;
-    width: auto;
+    width: 48px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .nav-logo-text {
