@@ -391,6 +391,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-label {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     color: var(--orange);
     font-weight: 700;
@@ -398,6 +399,10 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1rem;
+}
+
+.section-label span {
+    margin-right: -2px; /* Compense le letter-spacing pour un centrage visuel parfait */
 }
 
 .section-label::before,
