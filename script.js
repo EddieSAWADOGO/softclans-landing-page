@@ -1,134 +1,142 @@
-// Mobile menu toggle
-function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    const toggle = document.getElementById('mobileToggle');
-    navLinks.classList.toggle('active');
-    toggle.classList.toggle('active');
-}
-
-function closeMenu() {
-    const navLinks = document.getElementById('navLinks');
-    const toggle = document.getElementById('mobileToggle');
-    navLinks.classList.remove('active');
-    toggle.classList.remove('active');
-}
-
-// Navbar scroll effect
+// Navbar Scroll Effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
-    const scrollTop = document.getElementById('scrollTop');
-
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
+});
 
-    if (window.scrollY > 500) {
-        scrollTop.classList.add('visible');
+// Mobile Menu Toggle
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const mobileToggle = document.getElementById('mobileToggle');
+    navLinks.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
+}
+
+function closeMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const mobileToggle = document.getElementById('mobileToggle');
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+    }
+}
+
+// Scroll to Top Button
+window.addEventListener('scroll', function() {
+    const scrollTopButton = document.getElementById('scrollTop');
+    if (window.scrollY > 300) {
+        scrollTopButton.classList.add('visible');
     } else {
-        scrollTop.classList.remove('visible');
+        scrollTopButton.classList.remove('visible');
     }
 });
 
-// Scroll to top
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
-// Fade-in animations on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px'
-};
+// Contact Modal
+const contactModal = document.getElementById('contactModal');
+const contactButtons = document.querySelectorAll('a[href="#contact"].nav-cta, .btn-secondary[href="#contact"]'); // Select all elements that open the modal
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+contactButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
 });
-
-// Counter animation
-const counterObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-
-                updateCounter();
-            });
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    counterObserver.observe(heroStats);
-}
-
-// Modal functions
-function openModal() {
-    document.getElementById('contactModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
 
 function closeModal() {
-    document.getElementById('contactModal').classList.remove('active');
-    document.body.style.overflow = '';
+    contactModal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
 }
 
-document.getElementById('contactModal').addEventListener('click', function(e) {
-    if (e.target === this) {
+// Close modal when clicking outside content
+window.addEventListener('click', function(event) {
+    if (event.target === contactModal) {
         closeModal();
     }
 });
 
-// Form submission
-function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.btn-submit');
-    const originalText = btn.innerHTML;
+// Fade-in on scroll animation
+const faders = document.querySelectorAll('.fade-in');
 
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
-    btn.disabled = true;
+const appearOptions = {
+    threshold: 0.2, // When 20% of the item is visible
+    rootMargin: "0px 0px -100px 0px" // Start animation 100px before reaching the bottom of the viewport
+};
 
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
-        btn.style.background = '#25D366';
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('visible');
+            appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, appearOptions);
 
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-            e.target.reset();
-        }, 3000);
-    }, 1500);
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+// Hero Image Carousel
+let currentSlide = 0; // 0-indexed
+const slides = document.querySelectorAll('.carousel-image');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(n) {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    // Deactivate all dots
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Ensure n is within bounds
+    if (n >= slides.length) {
+        currentSlide = 0;
+    } else if (n < 0) {
+        currentSlide = slides.length - 1;
+    } else {
+        currentSlide = n;
+    }
+
+    // Show the current slide and activate the corresponding dot
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
 }
 
-// Keyboard escape for modal
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        closeModal();
-    }
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+// Initial call to display the first slide
+showSlide(currentSlide);
+
+// Automatic slideshow every 5 seconds
+let slideInterval = setInterval(nextSlide, 5000);
+
+// Manual navigation with dots
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        clearInterval(slideInterval); // Stop automatic slideshow
+        showSlide(index); // Show the clicked slide
+        slideInterval = setInterval(nextSlide, 5000); // Restart automatic slideshow
+    });
 });
+
+// Form submission handler (basic example)
+function handleSubmit(event) {
+    event.preventDefault();
+    alert('Message envoyé ! Nous vous contacterons bientôt.');
+    // Here you would typically send the form data to a server
+    event.target.reset(); // Clear the form
+}

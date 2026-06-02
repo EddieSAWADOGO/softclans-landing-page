@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soft Clans - Solutions Informatiques à Ouagadougou</title>
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.16/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +16,8 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#accueil" class="nav-logo">
-                <!-- Placez votre logo ici -->
-                <img src="images/logo.png" alt="Soft Clans Logo" onerror="this.style.display='none'">
-                <span class="nav-logo-text">Soft<span>Clans</span></span>
+                <img src="images/logo.png" alt="Logo Soft Clans" class="nav-logo-img">
+                <div class="nav-logo-text">Soft<span>Clans</span></div>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
@@ -26,12 +25,10 @@
                 <li><a href="#equipe" onclick="closeMenu()">Équipe</a></li>
                 <li><a href="#services" onclick="closeMenu()">Services</a></li>
                 <li><a href="#infrastructure" onclick="closeMenu()">Infrastructure</a></li>
-                <li><a href="#contact" onclick="closeMenu()" class="nav-cta">Contact</a></li>
+                <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
@@ -40,22 +37,26 @@
     <section class="hero" id="accueil">
         <div class="hero-bg-pattern"></div>
         <div class="hero-container">
-            <div class="hero-content">
-                
+            <div class="hero-content fade-in">
                 <h1>Votre Partenaire <span>Numérique</span> de Confiance</h1>
-                <p>De la formation professionnelle au développement web, en passant par la sécurité informatique et l'infographie Soft Clans accompagne les entreprises africaines dans leur transformation digitale.</p>
+                <p>De la formation professionnelle au développement web, en passant par la sécurité informatique et l'infographie, Soft Clans accompagne les entreprises africaines dans leur transformation digitale.</p>
                 <div class="hero-buttons">
-                    <a href="#services" class="btn-primary">
-                        Découvrir nos services <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        Nous contacter <i class="fas fa-phone"></i>
-                    </a>
+                    <a href="#services" class="btn-primary"><i class="fas fa-arrow-right"></i> Découvrir nos services</a>
+                    <a href="#contact" class="btn-secondary"><i class="fas fa-envelope"></i> Nous contacter</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=500&fit=crop" alt="Équipe Soft Clans au travail">
-                
+            <div class="hero-image fade-in">
+                <div class="hero-carousel">
+                    <img src="images/hero-1.png" alt="Image 1" class="carousel-image active">
+                    <img src="images/hero-2.png" alt="Image 2" class="carousel-image">
+                    <img src="images/hero-3.png" alt="Image 3" class="carousel-image">
+                    <img src="images/hero-4.png" alt="Image 4" class="carousel-image">
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,48 +65,32 @@
     <!-- ABOUT -->
     <section class="section about" id="apropos">
         <div class="section-container">
-            <div class="section-header fade-in">
-                <div class="section-label">
-                    <span>À propos de nous</span>
-                </div>
-                <h2>Bâtir l'Afrique <span>Numérique</span>, un projet à la fois</h2>
-            </div>
             <div class="about-grid">
                 <div class="about-image fade-in">
                     <div class="about-image-accent"></div>
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" alt="Équipe Soft Clans">
+                    <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/11f93346f-f2fa-4f0a-948a-8eb0b4fa26e6.png" alt="À propos de Soft Clans">
                 </div>
                 <div class="about-content fade-in">
-                    <p>Basée à <strong>Ouagadougou</strong>, Soft Clans est née d'une conviction profonde : le Burkina Faso et l'Afrique entière méritent des solutions technologiques de classe mondiale, accessibles et adaptées à nos réalités.</p>
-                    <p>Nous intervenons partout au Burkina et au-delà, avec une équipe passionnée qui croit que la technologie est le moteur du développement continental. Notre mission est simple : vous donner les outils pour réussir dans l'économie numérique.</p>
+                    <div class="section-label"><span>À propos de nous</span></div>
+                    <h2>Bâtir l'Afrique Numérique, <span>un projet à la fois</span></h2>
+                    <p>Basée à Ouagadougou, Soft Clans est née d'une conviction profonde : le Burkina Faso et l'Afrique entière méritent des solutions technologiques de classe mondiale, accessibles et adaptées à nos réalités.</p>
+                    <p>Nous intervenons partout au Burkina et au-delà, avec une équipe passionnée qui croit que la technologie est le moteur du développement continental.</p>
                     <div class="about-features">
                         <div class="about-feature">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Expertise locale</h4>
-                                <p>Solutions adaptées au contexte africain</p>
-                            </div>
+                            <div><h4>Expertise locale</h4><p>Solutions adaptées au contexte africain</p></div>
                         </div>
                         <div class="about-feature">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Intervention nationale</h4>
-                                <p>Présents partout au Burkina Faso</p>
-                            </div>
+                            <div><h4>Intervention nationale</h4><p>Présents partout au Burkina Faso</p></div>
                         </div>
                         <div class="about-feature">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Support continu</h4>
-                                <p>Accompagnement avant, pendant et après</p>
-                            </div>
+                            <div><h4>Support continu</h4><p>Accompagnement avant, pendant et après</p></div>
                         </div>
                         <div class="about-feature">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Formation certifiante</h4>
-                                <p>Microsoft, Azure, Power BI et plus</p>
-                            </div>
+                            <div><h4>Formation certifiante</h4><p>Microsoft, Azure, Power BI et plus</p></div>
                         </div>
                     </div>
                 </div>
@@ -117,20 +102,18 @@
     <section class="section team" id="equipe">
         <div class="section-container">
             <div class="section-header fade-in">
-                <div class="section-label">
-                    <span>L'Équipe</span>
-                </div>
-                <h2>Les experts derrière <span>Soft Clans</span></h2>
+                <div class="section-label"><span>L'Équipe</span></div>
+                <h2>Les experts derrière Soft Clans</h2>
                 <p>Une équipe passionnée de technologues dédiés à la réussite de vos projets numériques.</p>
             </div>
             <div class="team-grid">
-                <!-- Membre 1 -->
                 <div class="team-card fade-in">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" alt="Membre équipe">
+                        <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/194ad93d3-4a3d-4ba5-80ab-f88e1fe378fb.png" alt="Jean-Emmanuel Sawadogo">
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="team-info">
@@ -139,13 +122,13 @@
                         <p>Expert en solutions Cloud et architecture réseau avec plus de 8 ans d'expérience.</p>
                     </div>
                 </div>
-                <!-- Membre 2 -->
                 <div class="team-card fade-in">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Membre équipe">
+                        <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/121642d67-df5d-99ec-9e8f-16deb701faa2.png" alt="Awa Ouédraogo">
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="team-info">
@@ -154,13 +137,13 @@
                         <p>Spécialiste Fullstack passionnée par les interfaces utilisateurs modernes et intuitives.</p>
                     </div>
                 </div>
-                <!-- Membre 3 -->
                 <div class="team-card fade-in">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Membre équipe">
+                        <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/115bb7360-e66c-404d-995c-c6ce34b05432.png" alt="Idrissa Traoré">
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="team-info">
@@ -169,13 +152,13 @@
                         <p>Garant de la protection de vos données et de la robustesse de vos infrastructures.</p>
                     </div>
                 </div>
-                <!-- Membre 4 -->
                 <div class="team-card fade-in">
                     <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop" alt="Membre équipe">
+                        <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/1efd97141-ad8f-4ed3-a564-c456862fd8ed.png" alt="Fatimata Zongo">
                         <div class="team-socials">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                     <div class="team-info">
@@ -192,36 +175,25 @@
     <section class="section services" id="services">
         <div class="section-container">
             <div class="section-header fade-in">
-                <div class="section-label">
-                    <span>Nos Services</span>
-                </div>
+                <div class="section-label"><span>Nos Services</span></div>
                 <h2>Des solutions complètes pour votre entreprise</h2>
-                <p>De la formation à la vente de licences, en passant par le développement et l'infographie nous couvrons l'ensemble de vos besoins numériques.</p>
+                <p>De la formation à la vente de licences, en passant par le développement et l'infographie, nous couvrons l'ensemble de vos besoins numériques.</p>
             </div>
             <div class="services-grid">
-                <!-- Formation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Formation Professionnelle</h3>
                     <ul class="service-list">
-                        <li>Bureautique</li>
-                        <li>Microsoft M365</li>
+                        <li>Bureautique & Microsoft M365</li>
                         <li>Cloud & Azure</li>
                         <li>Sécurité informatique</li>
-                        <li>MS Project</li>
-                        <li>MS Excel</li>
+                        <li>MS Project & Excel</li>
                         <li>MS Power BI</li>
                         <li>Communication & gestion Facebook</li>
                     </ul>
                 </div>
-
-                <!-- Développement -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
                     <h3>Développement Informatique</h3>
                     <ul class="service-list">
                         <li>Développement de site web</li>
@@ -232,12 +204,8 @@
                         <li>API & Intégration</li>
                     </ul>
                 </div>
-
-                <!-- Installation -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-tools"></i></div>
                     <h3>Installation & Maintenance</h3>
                     <ul class="service-list">
                         <li>Installation de réseaux informatiques</li>
@@ -247,12 +215,8 @@
                         <li>Dépannage sur site</li>
                     </ul>
                 </div>
-
-                <!-- Infographie -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
                     <h3>Infographie & Impression</h3>
                     <ul class="service-list">
                         <li>Conception de dépliant, brochure, bâche</li>
@@ -263,12 +227,8 @@
                         <li>Montage vidéos</li>
                     </ul>
                 </div>
-
-                <!-- Ventes -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
                     <h3>Ventes</h3>
                     <ul class="service-list">
                         <li>Consommables informatiques</li>
@@ -278,12 +238,8 @@
                         <li>Accessoires informatiques</li>
                     </ul>
                 </div>
-
-                <!-- Consulting -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-chess"></i></div>
                     <h3>Conseil & Stratégie</h3>
                     <ul class="service-list">
                         <li>Audit informatique</li>
@@ -297,21 +253,33 @@
         </div>
     </section>
 
-    <!-- INFRASTRUCTURE & CLOUD -->
-    <section class="section infra" id="infrastructure" style="background: var(--light-gray);">
+    <!-- SERVICES BANNER -->
+    <section class="section services-banner">
+        <div class="section-container">
+            <div class="banner-content">
+                <div class="banner-text fade-in">
+                    <h2>Infrastructure & Cloud : <span>Domaines, Serveurs & Messagerie</span></h2>
+                    <p>Confiez-nous la base technique de votre entreprise pour une stabilité et une sécurité optimales. Nous gérons votre infrastructure numérique de A à Z.</p>
+                    <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Demander un devis personnalisé</a>
+                </div>
+                <div class="banner-image fade-in">
+                    <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/14fb3dc9a-803f-43ad-8b5e-6896b2bf03ab.png" alt="Infrastructure Cloud">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFRASTRUCTURE -->
+    <section class="section infra" id="infrastructure">
         <div class="section-container">
             <div class="section-header fade-in">
-                <div class="section-label">
-                    <span>Infrastructure & Cloud</span>
-                </div>
-                <h2>Domaines, Serveurs & Messagerie</h2>
-                <p>Confiez-nous la base technique de votre entreprise pour une stabilité et une sécurité optimales.</p>
+                <div class="section-label"><span>Infrastructure</span></div>
+                <h2>Votre socle technique, notre priorité</h2>
+                <p>Noms de domaines, hébergement, messagerie professionnelle et sécurité : tout ce qu'il faut pour une présence en ligne solide.</p>
             </div>
             <div class="infra-grid">
                 <div class="infra-card fade-in">
-                    <div class="infra-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
+                    <div class="infra-icon"><i class="fas fa-globe"></i></div>
                     <h3>Noms de Domaines</h3>
                     <p>Soyez propriétaire de votre identité numérique avec une gestion simplifiée.</p>
                     <ul class="infra-features">
@@ -321,9 +289,7 @@
                     </ul>
                 </div>
                 <div class="infra-card fade-in">
-                    <div class="infra-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
+                    <div class="infra-icon"><i class="fas fa-server"></i></div>
                     <h3>Hébergement & VPS</h3>
                     <p>Des serveurs haute performance configurés pour vos besoins spécifiques.</p>
                     <ul class="infra-features">
@@ -333,9 +299,7 @@
                     </ul>
                 </div>
                 <div class="infra-card fade-in">
-                    <div class="infra-icon">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>
+                    <div class="infra-icon"><i class="fas fa-envelope-open-text"></i></div>
                     <h3>Messagerie Pro</h3>
                     <p>Une communication d'entreprise crédible et sécurisée à tout moment.</p>
                     <ul class="infra-features">
@@ -345,9 +309,7 @@
                     </ul>
                 </div>
                 <div class="infra-card fade-in">
-                    <div class="infra-icon">
-                        <i class="fas fa-shield-halved"></i>
-                    </div>
+                    <div class="infra-icon"><i class="fas fa-lock"></i></div>
                     <h3>Sécurité & SSL</h3>
                     <p>Protégez vos utilisateurs et améliorez votre référencement Google.</p>
                     <ul class="infra-features">
@@ -357,33 +319,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="infra-cta fade-in" style="text-align: center; margin-top: 3rem;">
-                <div style="background: var(--white); padding: 2rem; border: 1px solid var(--medium-gray); display: inline-block; max-width: 700px;">
-                    <h3 style="color: var(--navy); margin-bottom: 1rem;">Besoin d'une configuration spécifique ?</h3>
-                    <p style="margin-bottom: 1.5rem;">Nos tarifs dépendent de vos besoins techniques (volume de mails, puissance serveur, etc.).</p>
-                    <a href="#contact" class="btn-primary">
-                        Demander un devis personnalisé <i class="fas fa-file-invoice"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES BANNER -->
-    <section class="section services-banner">
-        <div class="section-container">
-            <div class="banner-content">
-                <div class="banner-text fade-in">
-                    <h2>Basés à <span>Ouagadougou</span>, présents partout au <span>Burkina</span></h2>
-                    <p>Notre équipe intervient dans toutes les régions du Burkina Faso. Que vous soyez à Bobo-Dioulasso, Koudougou, Ouahigouya ou dans la moindre commune nous venons à vous avec expertise et détermination.</p>
-                    <a href="#contact" class="btn-primary">
-                        Demander un devis <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="banner-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop" alt="Bureau Soft Clans">
-                </div>
-            </div>
         </div>
     </section>
 
@@ -391,102 +326,74 @@
     <section class="section contact" id="contact">
         <div class="section-container">
             <div class="section-header fade-in">
-                <div class="section-label">
-                    <span>Contactez-nous</span>
-                </div>
+                <div class="section-label"><span>Contact</span></div>
                 <h2>Parlons de votre projet</h2>
-                <p>Disponible par téléphone, email, WhatsApp ou Facebook choisissez le canal qui vous convient.</p>
+                <p>Disponible par téléphone, email, WhatsApp ou Facebook — choisissez le canal qui vous convient.</p>
             </div>
             <div class="contact-grid">
-                <div class="contact-info">
+                <div class="contact-info fade-in">
                     <h2>Restons en <span>contact</span></h2>
                     <p>Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets numériques.</p>
                     <div class="contact-methods">
                         <a href="tel:+22665125562" class="contact-method">
-                            <div class="contact-method-icon phone">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>Téléphone</h4>
-                                <p>65 12 55 62 / 01 09 13 15</p>
-                            </div>
+                            <div class="contact-method-icon phone"><i class="fas fa-phone"></i></div>
+                            <div class="contact-method-text"><h4>Téléphone</h4><p>65 12 55 62 / 01 09 13 15</p></div>
                         </a>
                         <a href="mailto:contact@softclans.com" class="contact-method">
-                            <div class="contact-method-icon email">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>Email</h4>
-                                <p>contact@softclans.com</p>
-                            </div>
+                            <div class="contact-method-icon email"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-method-text"><h4>Email</h4><p>contact@softclans.com</p></div>
                         </a>
-                        <a href="https://wa.me/22665125562" target="_blank" class="contact-method">
-                            <div class="contact-method-icon whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>WhatsApp</h4>
-                                <p>+226 65 12 55 62</p>
-                            </div>
+                        <a href="https://wa.me/22665125562" class="contact-method">
+                            <div class="contact-method-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-method-text"><h4>WhatsApp</h4><p>+226 65 12 55 62</p></div>
                         </a>
-                        <a href="https://facebook.com/softclans" target="_blank" class="contact-method">
-                            <div class="contact-method-icon facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>Facebook</h4>
-                                <p>@softclans</p>
-                            </div>
+                        <a href="https://facebook.com/softclans" class="contact-method">
+                            <div class="contact-method-icon facebook"><i class="fab fa-facebook-f"></i></div>
+                            <div class="contact-method-text"><h4>Facebook</h4><p>@softclans</p></div>
                         </a>
                         <div class="contact-method">
-                            <div class="contact-method-icon location">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-method-text">
-                                <h4>Localisation</h4>
-                                <p>Ouagadougou, Burkina Faso</p>
-                            </div>
+                            <div class="contact-method-icon location"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-method-text"><h4>Localisation</h4><p>Ouagadougou, Burkina Faso</p></div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper fade-in">
                     <h3>Envoyez-nous un message</h3>
                     <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <form onsubmit="handleSubmit(event)">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Nom complet</label>
-                                <input type="text" id="name" placeholder="Votre nom" required>
+                                <label>Nom complet</label>
+                                <input type="text" required placeholder="Votre nom">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" placeholder="+226 XX XX XX XX" required>
+                                <label>Téléphone</label>
+                                <input type="tel" required placeholder="+226 ...">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Adresse email</label>
-                            <input type="email" id="email" placeholder="votre@email.com" required>
+                            <label>Adresse email</label>
+                            <input type="email" required placeholder="votre@email.com">
                         </div>
                         <div class="form-group">
-                            <label for="service">Service souhaité</label>
-                            <select id="service" required>
+                            <label>Service souhaité</label>
+                            <select required>
                                 <option value="">-- Choisir un service --</option>
-                                <option value="formation">Formation Professionnelle</option>
-                                <option value="developpement">Développement Informatique</option>
-                                <option value="installation">Installation & Maintenance</option>
-                                <option value="infographie">Infographie & Impression</option>
-                                <option value="ventes">Ventes & Licences</option>
-                                <option value="conseil">Conseil & Stratégie</option>
-                                <option value="autre">Autre</option>
+                                <option>Formation Professionnelle</option>
+                                <option>Développement Informatique</option>
+                                <option>Installation & Maintenance</option>
+                                <option>Infographie & Impression</option>
+                                <option>Ventes & Licences</option>
+                                <option>Conseil & Stratégie</option>
+                                <option>Infrastructure & Cloud</option>
+                                <option>Autre</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" placeholder="Décrivez votre besoin..." required></textarea>
+                            <label>Message</label>
+                            <textarea required placeholder="Décrivez votre projet..."></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">
-                            Envoyer le message <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -497,16 +404,16 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="#accueil" class="nav-logo" style="margin-bottom: 0.5rem;">
-                    <img src="images/logo.png" alt="Soft Clans" style="height: 40px; width: 40px; border-radius: 50%; object-fit: cover;" onerror="this.style.display='none'">
-                    <span class="nav-logo-text" style="color: #fff;">Soft<span>Clans</span></span>
+                <a href="#accueil" class="nav-logo">
+                    <img src="images/logo.png" alt="Soft Clans Logo" class="nav-logo-img" style="background: var(--orange);">
+                    <div class="nav-logo-text" style="color: white;">Soft<span>Clans</span></div>
                 </a>
                 <p>Votre partenaire numérique de confiance à Ouagadougou. Nous transformons les défis technologiques en opportunités de croissance pour les entreprises africaines.</p>
                 <div class="footer-social">
-                    <a href="https://facebook.com/softclans" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/22665125562" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:contact@softclans.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+22665125562" aria-label="Téléphone"><i class="fas fa-phone"></i></a>
+                    <a href="https://facebook.com/softclans"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/22665125562"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -524,62 +431,52 @@
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#equipe">Équipe</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#infrastructure">Infrastructure</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
                 <ul>
-                    <li><a href="tel:+22665125562">65 12 55 62</a></li>
-                    <li><a href="tel:+22601091315">01 09 13 15</a></li>
-                    <li><a href="mailto:contact@softclans.com">contact@softclans.com</a></li>
-                    <li><a href="#">Ouagadougou, Burkina Faso</a></li>
+                    <li><a href="tel:+22665125562"><i class="fas fa-phone" style="margin-right: 8px; color: var(--orange);"></i>65 12 55 62</a></li>
+                    <li><a href="tel:+22601091315"><i class="fas fa-phone" style="margin-right: 8px; color: var(--orange);"></i>01 09 13 15</a></li>
+                    <li><a href="mailto:contact@softclans.com"><i class="fas fa-envelope" style="margin-right: 8px; color: var(--orange);"></i>contact@softclans.com</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--orange);"></i>Ouagadougou, Burkina Faso</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 <span>Soft Clans</span>  Fièrement Burkinabè 🇧🇫, au service de l'Afrique numérique. Tous droits réservés.</p>
-            <p class="footer-african">« L'Afrique n'a pas besoin d'importer son futur  elle doit le coder. »</p>
+            <p>© 2026 <span>Soft Clans</span> — Fièrement Burkinabè 🇫, au service de l'Afrique numérique. Tous droits réservés.</p>
+            <p class="footer-african">« L'Afrique n'a pas besoin d'importer son futur, elle doit le coder. »</p>
         </div>
     </footer>
 
-    <!-- SCROLL TO TOP -->
-    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/22665125562" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- CONTACT MODAL -->
+    <!-- MODAL CONTACT -->
     <div class="modal-overlay" id="contactModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
             <h3>Nos canaux de contact</h3>
             <p>Choisissez le moyen qui vous convient le mieux pour nous joindre.</p>
             <div class="modal-links">
                 <a href="tel:+22665125562" class="modal-link">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-phone" style="color: var(--navy);"></i>
                     <span>Téléphone</span>
                     <span class="link-detail">65 12 55 62</span>
                 </a>
-                <a href="https://wa.me/22665125562" target="_blank" class="modal-link">
-                    <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/22665125562" class="modal-link">
+                    <i class="fab fa-whatsapp" style="color: #25D366;"></i>
                     <span>WhatsApp</span>
                     <span class="link-detail">+226 65 12 55 62</span>
                 </a>
                 <a href="mailto:contact@softclans.com" class="modal-link">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" style="color: var(--orange);"></i>
                     <span>Email</span>
                     <span class="link-detail">contact@softclans.com</span>
                 </a>
-                <a href="https://facebook.com/softclans" target="_blank" class="modal-link">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://facebook.com/softclans" class="modal-link">
+                    <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
                     <span>Facebook</span>
                     <span class="link-detail">@softclans</span>
                 </a>
@@ -587,6 +484,15 @@
         </div>
     </div>
 
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/22665125562" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="script.js"></script>
 </body>
 </html>
