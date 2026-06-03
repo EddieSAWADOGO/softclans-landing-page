@@ -133,10 +133,71 @@ dots.forEach((dot, index) => {
     });
 });
 
+// Fonction pour afficher des notifications personnalisées
+function showNotification(message, type = 'success') {
+    let container = document.querySelector('.notification-container');
+    
+    // Créer le conteneur s'il n'existe pas
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'notification-container';
+        document.body.appendChild(container);
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    
+    const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+    
+    notification.innerHTML = `
+        <i class="fas ${icon}"></i>
+        <div class="notification-text">${message}</div>
+    `;
+
+    container.appendChild(notification);
+
+    // Animation d'entrée
+    setTimeout(() => notification.classList.add('active'), 100);
+
+    // Suppression automatique après 5 secondes
+    setTimeout(() => {
+        notification.classList.remove('active');
+        setTimeout(() => notification.remove(), 500);
+    }, 5000);
+}
+
 // Form submission handler (basic example)
 function handleSubmit(event) {
     event.preventDefault();
-    alert('Message envoyé ! Nous vous contacterons bientôt.');
-    // Here you would typically send the form data to a server
-    event.target.reset(); // Clear the form
+    const btnSubmit = event.target.querySelector('.btn-submit');
+    const originalBtnText = btnSubmit.innerHTML;
+    
+    // Désactiver le bouton pendant l'envoi
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+    const formData = new FormData(event.target);
+    // Ajouter votre clé d'accès Web3Forms ici
+    formData.append("access_key", "VOTRE_CLE_ICI"); 
+
+    const data = Object.fromEntries(formData.entries());
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(async (response) => {
+        if (response.status == 200) {
+            showNotification('Merci ' + data.nom + ' ! Votre demande de devis a été envoyée avec succès.', 'success');
+            event.target.reset();
+        } else {
+            showNotification('Une erreur est survenue. Veuillez nous contacter via WhatsApp.', 'error');
+        }
+    }).finally(() => {
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = originalBtnText;
+    });
 }

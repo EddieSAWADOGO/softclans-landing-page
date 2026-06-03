@@ -366,20 +366,20 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Nom complet</label>
-                                <input type="text" required placeholder="Votre nom">
+                                <input type="text" name="nom" required placeholder="Votre nom">
                             </div>
                             <div class="form-group">
                                 <label>Téléphone</label>
-                                <input type="tel" required placeholder="+226 ...">
+                                <input type="tel" name="telephone" required placeholder="+226 ...">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Adresse email</label>
-                            <input type="email" required placeholder="votre@email.com">
+                            <input type="email" name="email" required placeholder="votre@email.com">
                         </div>
                         <div class="form-group">
                             <label>Service souhaité</label>
-                            <select required>
+                            <select name="service" required>
                                 <option value="">-- Choisir un service --</option>
                                 <option>Formation Professionnelle</option>
                                 <option>Développement Informatique</option>
@@ -393,7 +393,7 @@
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea required placeholder="Décrivez votre projet..."></textarea>
+                            <textarea name="message" required placeholder="Décrivez votre projet..."></textarea>
                         </div>
                         <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
                     </form>
