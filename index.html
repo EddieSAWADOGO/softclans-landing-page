@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soft Clans - Solutions Informatiques à Ouagadougou</title>
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.16/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -35,30 +36,52 @@
 
     <!-- HERO -->
     <section class="hero" id="accueil">
-        <div class="hero-bg-pattern"></div>
+        <div class="hero-bg-pattern">
+            <div class="hero-grid-lines"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+
         <div class="hero-container">
             <div class="hero-content fade-in">
-                <h1>Votre Partenaire <span>Numérique</span> de Confiance</h1>
+                <h1>Votre Partenaire <br><span class="hero-headline-accent">Numérique</span><br>de Confiance</h1>
                 <p>De la formation professionnelle au développement web, en passant par la sécurité informatique et l'infographie, Soft Clans accompagne les entreprises africaines dans leur transformation digitale.</p>
+
                 <div class="hero-buttons">
-                    <a href="#services" class="btn-primary"><i class="fas fa-arrow-right"></i> Découvrir nos services</a>
-                    <a href="#contact" class="btn-secondary"><i class="fas fa-envelope"></i> Nous contacter</a>
+                    <a href="#services" class="btn-primary"><i class="fas fa-rocket"></i> Découvrir nos services</a>
+                    <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Nous contacter</a>
                 </div>
             </div>
-            <div class="hero-image fade-in">
-                <div class="hero-carousel">
-                    <img src="images/hero-1.png" alt="Image 1" class="carousel-image active">
-                    <img src="images/hero-2.png" alt="Image 2" class="carousel-image">
-                    <img src="images/hero-3.png" alt="Image 3" class="carousel-image">
-                    <img src="images/hero-4.png" alt="Image 4" class="carousel-image">
+
+            <div class="hero-visual fade-in">
+                <div class="hero-carousel-wrapper">
+                    <div class="hero-carousel-frame">
+                        <div class="hero-carousel-inner">
+                            <div class="hero-carousel">
+                                <img src="images/hero-1.png" alt="Image 1" class="carousel-image active">
+                                <img src="images/hero-2.png" alt="Image 2" class="carousel-image">
+                                <img src="images/hero-3.png" alt="Image 3" class="carousel-image">
+                                <img src="images/hero-4.png" alt="Image 4" class="carousel-image">
+                            </div>
+                        </div>
+                        <div class="hero-frame-accent-tl"></div>
+                        <div class="hero-frame-accent-br"></div>
+                    </div>
                     <div class="carousel-dots">
                         <span class="dot active" data-slide="0"></span>
                         <span class="dot" data-slide="1"></span>
                         <span class="dot" data-slide="2"></span>
                         <span class="dot" data-slide="3"></span>
                     </div>
+
                 </div>
             </div>
+        </div>
+
+        <div class="hero-scroll-hint">
+            <span>Défiler</span>
+            <div class="hero-scroll-line"></div>
         </div>
     </section>
 
@@ -108,8 +131,9 @@
                 <h2>Les experts derrière Soft Clans</h2>
                 <p>Une équipe passionnée de technologues dédiés à la réussite de vos projets numériques.</p>
             </div>
-            <div class="team-grid">
-                <div class="team-card fade-in">
+            <div class="team-carousel">
+                <div class="team-grid">
+                    <div class="team-card fade-in">
                     <div class="team-image">
                         <img src="https://image.qwenlm.ai/public_source/32faa2a3-0bdf-4a67-b155-dc007cef652a/194ad93d3-4a3d-4ba5-80ab-f88e1fe378fb.png" alt="Jean-Emmanuel Sawadogo">
                         <div class="team-socials">
