@@ -1306,21 +1306,35 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 
+    .modal-link span:not(.link-detail) {
+        display: none;
+    }
+
     .about-features {
         grid-template-columns: 1fr;
     }
     
     /* Ajustements pour le défilement de l'équipe sur mobile */
     .team-card {
-        width: calc((100% / 2) - (1 * 2rem / 2)); /* 2 cartes par vue sur les écrans moyens */
+        width: 280px; /* Une largeur fixe pour les cartes sur mobile */
+        min-width: 280px;
+        max-width: 280px;
     }
 }
+
+/* La media query suivante est redondante et peut être fusionnée ou supprimée si ses règles sont déjà couvertes */
 
 @media (max-width: 768px) {
     .team-card {
         width: 100%;
         min-width: 100%;
         max-width: 100%;
+    }
+    .team-carousel {
+        padding-left: 20px; /* Ajoute un rembourrage horizontal au carrousel */
+        padding-right: 20px;
+        scroll-padding-left: 20px; /* Assure que le scroll-snap prend en compte le rembourrage */
+        scroll-padding-right: 20px;
     }
 
     .footer-bottom {
@@ -1331,6 +1345,10 @@ h1, h2, h3, h4, h5, h6 {
     .btn-secondary {
         color: var(--white);
         border-color: rgba(255,255,255,0.2);
+    }
+
+    .modal-link span:not(.link-detail) {
+        display: none;
     }
 }
 
