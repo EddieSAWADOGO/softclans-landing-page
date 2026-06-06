@@ -44,6 +44,7 @@ function scrollToTop() {
 
 // Contact Modal
 const contactModal = document.getElementById("contactModal");
+const teamModal = document.getElementById("teamModal");
 const contactButtons = document.querySelectorAll(
   'a[href="#contact"].nav-cta, .btn-secondary[href="#contact"]',
 ); // Select all elements that open the modal
@@ -66,7 +67,83 @@ window.addEventListener("click", function (event) {
   if (event.target === contactModal) {
     closeModal();
   }
+
+  if (event.target === teamModal) {
+    closeTeamModal();
+  }
 });
+
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+    closeTeamModal();
+  }
+});
+
+function openTeamModal(button) {
+  const memberName = button.dataset.name || "Membre de l’équipe";
+  const memberRole = button.dataset.role || "";
+  const memberImage = button.dataset.image || "";
+  const memberDescription = button.dataset.description || "";
+
+  const socialLinks = [
+    { id: "modalMemberLinkedin", href: button.dataset.linkedin, label: "LinkedIn" },
+    { id: "modalMemberEmail", href: button.dataset.email, label: "Email" },
+    { id: "modalMemberGithub", href: button.dataset.github, label: "GitHub" },
+    { id: "modalMemberX", href: button.dataset.x, label: "X" },
+    { id: "modalMemberDribbble", href: button.dataset.dribbble, label: "Dribbble" },
+  ];
+
+  document.getElementById("modalMemberImg").src = memberImage;
+  document.getElementById("modalMemberImg").alt = memberName;
+  document.getElementById("modalMemberName").textContent = memberName;
+  document.getElementById("modalMemberRole").textContent = memberRole;
+  document.getElementById("modalMemberDesc").textContent = memberDescription;
+
+  socialLinks.forEach(({ id, href }) => {
+    const link = document.getElementById(id);
+    if (!link) return;
+
+    if (href && href.trim() && href !== "#") {
+      link.href = href;
+      link.style.display = "inline-flex";
+    } else {
+      link.href = "#";
+      link.style.display = "none";
+    }
+  });
+
+  teamModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeTeamModal() {
+  teamModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+function getPreviewText(text) {
+  const cleanText = (text || "").trim();
+  if (!cleanText) return "Découvrez le profil complet de cette expert(e).";
+
+  const plainText = cleanText.replace(/\s+/g, " ");
+  return plainText.length > 120
+    ? `${plainText.slice(0, 117).trimEnd()}...`
+    : plainText;
+}
+
+function syncTeamCardPreviews() {
+  document.querySelectorAll(".team-card").forEach((card) => {
+    const button = card.querySelector(".team-read-more");
+    const preview = card.querySelector(".team-info p");
+
+    if (button && preview) {
+      preview.textContent = getPreviewText(button.dataset.description);
+    }
+  });
+}
+
+syncTeamCardPreviews();
 
 // Fade-in on scroll animation
 const faders = document.querySelectorAll(".fade-in");
