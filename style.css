@@ -568,7 +568,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 450px;
     object-fit: cover;
     box-shadow: 0 20px 50px rgba(5, 8, 89, 0.15);
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
 }
 
 .about-image-accent {
@@ -674,7 +674,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2rem;
     transition: var(--transition);
     position: relative;
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
     box-shadow: var(--card-shadow);
 }
 
@@ -789,7 +789,7 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 400px;
     object-fit: cover;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
 }
 
 /* ===== CONTACT ===== */
@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
     background: var(--white);
     border: 1px solid var(--medium-gray);
-    border-radius: 18px;
+    border-radius: 0;
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
     cursor: pointer;
     text-decoration: none;
@@ -1510,7 +1510,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: var(--dark-text); /* Keep original */
     transition: all 0.3s ease;
-    border-radius: var(--radius);
+    border-radius: 0;
 }
 
 .modal-link:hover {
@@ -1625,7 +1625,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 320px;
     min-width: 280px;
     scroll-snap-align: start;
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(5, 8, 89, 0.05);
     overflow: hidden;
@@ -1767,7 +1767,7 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--white);
     padding: 2.2rem 1.8rem;
     border: 1px solid rgba(5, 8, 89, 0.05);
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
     text-align: center;
     transition: var(--transition);
     display: flex;
@@ -1793,7 +1793,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
-    border-radius: var(--radius); /* Apply border-radius */
+    border-radius: 0;
     transition: all 0.4s ease;
     flex-shrink: 0;
 }
